@@ -43,7 +43,10 @@ const Form = () => {
             }
         })
             .then(res => res.json())
-            .then(res => navigate('/transactions'))
+            .then(res => {
+                pos ? navigate(`/transactions/${pos}`) :
+                navigate('/transactions')
+            })
             .catch(err => console.error(err))
     }
     
