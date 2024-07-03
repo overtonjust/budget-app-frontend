@@ -1,6 +1,7 @@
 // Dependencies
 import React from 'react';
 import { Routes, Route, Navigate} from 'react-router-dom';
+import './App.scss'
 
 // Components
 import Navbar from './components/Navbar/Navbar';

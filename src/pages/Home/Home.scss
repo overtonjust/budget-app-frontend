@@ -1,0 +1,172 @@
+@import '../../Shared.scss';
+
+.dashboard {
+    padding: 1.2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.menuboard {
+    width: 200px;
+    height: 700px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1.4em;
+    gap: 1.2em;
+    border-radius: .1rem;
+    box-shadow: 2px 0 5px rgba(0,0,0,.4);
+
+    &__icon{
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+
+    &__option{
+        font-size: .8rem;
+        color: $grey;
+        cursor: pointer;
+    }
+
+    &__option:hover {
+        transition: .2s ease-in;
+        transform: translateY(-2px);
+        color: $hoverBlue;
+    }
+}
+
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+    &__heading {
+        width: 300px;
+        background-color: #fff;
+        padding: 4%;
+        box-shadow: 2px 0 5px rgba(0,0,0,.4);
+        border-radius: .1em;
+
+    }
+}
+
+
+
+.history {
+    background-color: #fff;
+    max-height: 700px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: .1rem;
+    box-shadow: 2px 0 5px rgba(0,0,0,.4);
+    
+
+    &__header {
+        padding: .8em;
+        text-align: center;
+        border-bottom: 1px solid $grey;
+    }
+
+    &__list {
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .6em .8em;
+        gap: .4em;
+        border-bottom: 1px solid $grey;
+        cursor: pointer;
+    }
+
+    &__item:hover {
+        transition: .2s ease-in;
+        transform: translateY(-2px);
+        background-color: $hoverBlue;
+    }
+
+    &__amount{
+        justify-self: flex-end;
+        margin-left: 40px;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $grey;
+        padding: .4em;
+        border-radius: .2em;
+        margin-right: 4px;
+    }
+
+    &__icon {
+        color: $darkGrey;
+    }
+
+    &__name {
+        font-size: .9em;
+    }
+
+    &__date {
+        color: $grey;
+        font-size: .6em;
+    }
+
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4%;
+    }
+
+    &__footer-box {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__footer-icon{
+        color: $blue;
+        font-size: 1.4em;
+    }
+
+    &__footer-text {
+        font-size: .7em;
+    }
+
+    &__footer-button {
+        background-color: $blue;
+        outline: none;
+        border: none;
+        padding: .2em .4em;
+        border-radius: .2em;
+        color: #fff;
+        font-size: .8em;
+        cursor: pointer;
+    }
+
+    &__footer-button:hover {
+        transition: .2s ease-in;
+        transform: translateY(-2px);
+    }
+}
+
+.green { 
+    color: $green;
+}
+
+.red {
+    color: $red;
+}

@@ -11,7 +11,7 @@ import { faMoneyBillTransfer } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
     return (
         <nav className='navbar'>
-            <h2 className='navbar__title'><Link to='/transactions'>Simply Budgeting</Link></h2>
+            <h4 className='navbar__title'><Link to='/transactions'>Simply Budgeting</Link></h4>
             <Link to='/update'><FontAwesomeIcon className='navbar__icon' icon={faMoneyBillTransfer} /></Link>
         </nav>
     );

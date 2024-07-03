@@ -6,4 +6,15 @@ const capitalize = (str) => {
     return `${firstLetter}${rest}`
 }
 
-export { capitalize }
+const formatDateView = (str) => {
+    const transactionDate = new Date(str)
+    return transactionDate.toDateString()
+}
+
+const formatDateForm = (str) => {
+    const localeDate = str.toLocaleString()
+    const [month, day, year] = localeDate.split('/');
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+}
+
+export { capitalize , formatDateView, formatDateForm }

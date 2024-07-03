@@ -1,0 +1,59 @@
+@import '../../Shared.scss';
+
+form {
+    margin: 8em auto;
+    width: 500px;
+}
+
+fieldset {
+    padding: 1em;
+    background-color: #fff;
+}
+
+label {
+    font-size: .8rem;
+    color: $darkGrey;
+    margin-right: 8px;
+}
+
+input {
+    margin: 4px 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $darkGrey;
+} 
+
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.input-number {
+    width: 80px;
+    text-align: right;
+    border: 1px solid $darkGrey;
+}
+
+
+input::placeholder {
+    color: $darkGrey;
+}
+
+.submit-button {
+    background-color: $blue;
+    margin-top: 15px;
+    outline: none;
+    border: none;
+    padding: .2em .4em;
+    border-radius: .2em;
+    color: #fff;
+    font-size: .8em;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    transition: .2s ease-in;
+    transform: translateY(-2px);
+}
