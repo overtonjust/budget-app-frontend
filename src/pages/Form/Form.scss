@@ -57,3 +57,10 @@ input::placeholder {
     transition: .2s ease-in;
     transform: translateY(-2px);
 }
+
+.error {
+    color: $error;
+    font-size: .8rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}

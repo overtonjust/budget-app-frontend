@@ -17,4 +17,13 @@ const formatDateForm = (str) => {
     return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
 }
 
-export { capitalize , formatDateView, formatDateForm }
+const monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+
+const currentMonth = () => {
+    const month = new Date()
+
+    return monthsArray[month.getMonth()]
+}
+
+export { capitalize , formatDateView, formatDateForm, currentMonth, monthsArray }

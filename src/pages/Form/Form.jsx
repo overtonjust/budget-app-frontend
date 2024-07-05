@@ -23,6 +23,7 @@ const Form = () => {
         {value: 'Entertainment', label: 'Entertainment'},
         {value: 'Expenses', label: 'Bills & Expenses'}
     ]
+    const [errorMessage, setErrorMessage] = useState('')
     const API = import.meta.env.VITE_API_KEY;
 
     if(pos) {
@@ -36,7 +37,7 @@ const Form = () => {
                     setTransaction(res)
                     setChosenOption(res.category)
                 })
-                .catch(err => console.error(err))
+                .catch(err => console.error(err.message))
         },[pos])
     }
 
@@ -57,7 +58,7 @@ const Form = () => {
         e.preventDefault()
         const APIKEY = pos ? `${API}/${pos}` : API
         const methodType = pos ? 'PUT' : 'POST'
-        
+
         fetch(APIKEY, {
             method: methodType,
             body: JSON.stringify(transaction),
@@ -65,19 +66,26 @@ const Form = () => {
                 "Content-Type": "application/json"
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if(!res.ok) {
+                    return res.json().then(err => {
+                        throw setErrorMessage(err.error || 'An error occurred');
+                    })
+                } else {
+                    return res.json()
+                }
+            })
             .then(res => {
                return pos ? navigate(`/transactions/${pos}`) :
                 navigate('/transactions')
             })
-            .catch(err => console.error(err))
+            .catch(err => console.error(err.message))
     }
     
-
-
     return (
         <form onSubmit={handleSubmit}>
             <fieldset>
+                {errorMessage ? <h5 className='error'>{errorMessage}</h5> : ''}
                 <legend>{pos ? 'Edit details' : 'New Transaction'}</legend>
                 <div className='input-box'>
                     <input 
