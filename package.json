@@ -16,9 +16,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "chart.js": "^4.4.3",
+    "hamburger-react": "^2.5.1",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
+    "react-responsive": "^10.0.0",
     "react-router-dom": "^6.24.0",
     "react-select": "^5.8.0",
     "sass": "^1.77.6"

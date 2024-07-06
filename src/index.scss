@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import './Shared.scss';
 
 * {
   margin: 0;
@@ -8,6 +9,6 @@
 
 body {
   height: 100vh;
-  background-color: #F1F6F9;
+  background-color: $background;
   font-family: "Inter", sans-serif;
 }

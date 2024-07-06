@@ -11,7 +11,8 @@
 
 .menuboard {
     width: 200px;
-    height: 700px;
+    height: 80vh;
+    max-height: 700px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -60,6 +61,7 @@
 
 .history {
     background-color: #fff;
+    height: 80vh;
     max-height: 700px;
     width: 400px;
     display: flex;
@@ -72,6 +74,11 @@
         padding: .8em;
         text-align: center;
         border-bottom: 1px solid $grey;
+    }
+
+    &__holder {
+        display: flex;
+        gap: 10px;
     }
 
     &__list {
@@ -163,10 +170,42 @@
     }
 }
 
+@media (max-width: 768px) {
+    .dashboard {
+        overflow-y: scroll;
+        scrollbar-width: none;
+
+        &__menu {
+            display: none;
+        }
+    }
+
+    .content{
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    .history {
+        width: 300px;
+        height: max-content;
+        max-height: 500px;
+    }
+
+    .menuboard {
+        height: 240px;
+   
+    }
+}
+
+
 .green { 
     color: $green;
 }
 
 .red {
     color: $red;
+}
+
+.yellow {
+    color: $yellow;
 }

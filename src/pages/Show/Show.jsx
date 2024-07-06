@@ -8,17 +8,17 @@ import './Show.scss'
 
 const Show = () => {
     const [currTransaction, setCurrTransaction] = useState(false)
-    const { index } = useParams()
+    const { id } = useParams()
     const navigate = useNavigate()
     const API = import.meta.env.VITE_API_KEY
     let categoryIcon = '';
    
     useEffect(() => {
-        fetch(`${API}/${index}`)
+        fetch(`${API}/${id}`)
             .then(res => res.json())
             .then(res => setCurrTransaction(res))
             .catch(err => console.error(err))
-    },[index])
+    },[id])
 
     switch(currTransaction.category) {
         case 'Income':
@@ -41,7 +41,7 @@ const Show = () => {
     }
 
     const handleDelete = () => {
-        fetch(`${API}/${index}`, {
+        fetch(`${API}/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
@@ -65,7 +65,7 @@ const Show = () => {
                 </header>
                 <p className='showcard__info'>Date processed: {formatDateView(currTransaction.date)}</p>
                 <p className='showcard__info'>{currTransaction.amount > 0 ? 'From' : 'To'} {currTransaction.source}</p>
-                <Link to={`/update/?pos=${index}`}><button className='showcard__button'>Edit</button></Link>
+                <Link to={`/update/?pos=${id}`}><button className='showcard__button'>Edit</button></Link>
             </article>
         );
     }

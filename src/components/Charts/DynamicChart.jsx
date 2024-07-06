@@ -1,11 +1,21 @@
+// Dependencies
 import React from 'react';
 import { Chart as ChartJS } from 'chart.js/auto'
-import { Doughnut, Bar } from 'react-chartjs-2';
 import { currentMonth, monthsArray } from '../../../utils';
 
+// Components
+import { Doughnut, Bar } from 'react-chartjs-2';
 
 const DynamicChart = ({values, filter}) => {
-    
+
+    const colormap = {
+        'Income': '#28B87B',
+        'Food & Drink': '#fa8a19',
+        'Shopping': '#bf00ff',
+        'Entertainment': '#00B0FF',
+        'Expenses': '#D10D24'
+    }
+
 
     const textCenter = {
         id: 'textCenter',
@@ -25,11 +35,12 @@ const DynamicChart = ({values, filter}) => {
         return (
             <Doughnut
                 data={{
-                    labels: ['Income', 'Food & Drink', 'Shopping', 'Entertainment', 'Expense'],
+                    labels: ['Income', 'Food & Drink', 'Shopping', 'Entertainment', 'Expenses'],
                     datasets: [
                         {
                             label: 'July',
-                            data: values
+                            data: values,
+                            backgroundColor: Object.values(colormap)
                         },  
                     ],
                 }}
@@ -44,10 +55,12 @@ const DynamicChart = ({values, filter}) => {
                     datasets: [
                         {
                             label: filter,
-                            data: values
+                            data: values,
+                            backgroundColor: colormap[filter]
                         }
                     ]
                 }}
+                
             />
         )
     }

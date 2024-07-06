@@ -1,8 +1,11 @@
+// Dependencies
 import React,{ useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { formatDateForm } from '../../../utils';
+import './Form.scss';
+
+// Compoenents
 import  Select  from 'react-select';
-import './Form.scss'
 
 const Form = () => {
     const navigate = useNavigate()
@@ -21,7 +24,7 @@ const Form = () => {
         {value: 'Food & Drink', label: 'Food & Drink'},
         {value: 'Shopping', label: 'Shopping'},
         {value: 'Entertainment', label: 'Entertainment'},
-        {value: 'Expenses', label: 'Bills & Expenses'}
+        {value: 'Expenses', label: 'Expenses'}
     ]
     const [errorMessage, setErrorMessage] = useState('')
     const API = import.meta.env.VITE_API_KEY;
@@ -35,7 +38,7 @@ const Form = () => {
                         res.date = formatDateForm(res.date);
                       }
                     setTransaction(res)
-                    setChosenOption(res.category)
+                    setChosenOption({value: res.category, label: res.category})
                 })
                 .catch(err => console.error(err.message))
         },[pos])
@@ -81,6 +84,7 @@ const Form = () => {
             })
             .catch(err => console.error(err.message))
     }
+
     
     return (
         <form onSubmit={handleSubmit}>
