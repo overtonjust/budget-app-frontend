@@ -27,6 +27,7 @@ const Form = () => {
         {value: 'Expenses', label: 'Expenses'}
     ]
     const [errorMessage, setErrorMessage] = useState('')
+    const [transactionType, setTransactionType] = useState('deposit')
     const API = import.meta.env.VITE_API_KEY;
 
     if(pos) {
@@ -45,6 +46,7 @@ const Form = () => {
     }
 
     const handleChange = (e) => {
+       
         setTransaction((prevState) => {
             return {...prevState, [e.target.name]: e.target. value}
         })
@@ -56,6 +58,16 @@ const Form = () => {
             return {...prevState, category: selectedOption.value}
         })
     }
+
+    const handleRadio = (e) => {
+        setTransactionType(e.target.value)
+        setTransaction((prevState) => {
+            const amount = e.target.value === 'withdrawal' ? -Math.abs(prevState.amount) : Math.abs(prevState.amount)
+             return {...prevState, amount}
+            
+        })
+    }
+    
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -138,12 +150,34 @@ const Form = () => {
                     }}
                     />
                 </div>
-                <label htmlFor="amount"> $ Amount</label>
+                <div className="radio-holder">
+                    <label htmlFor="deposit">Deposit</label>
+                    <input 
+                    type="radio" 
+                    id='deposit'
+                    name='amountType'
+                    value='deposit'
+                    checked={transactionType === 'deposit'}
+                    onChange={handleRadio}
+                    />
+                </div>
+                <div className="radio-holder">
+                    <label htmlFor="withdrawal">Withdrawal</label>
+                    <input 
+                    type="radio" 
+                    id='withdrawal'
+                    name='amountType'
+                    value='withdrawal'
+                    checked={transactionType === 'withdrawal'}
+                    onChange={handleRadio}
+                    />
+                </div>
                 <input 
                 className='input-number'
                 type="number"
                 id='amount'
                 name='amount'
+                
                 value={transaction.amount} 
                 onChange={handleChange}
                 />

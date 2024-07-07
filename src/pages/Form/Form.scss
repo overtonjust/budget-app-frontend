@@ -23,11 +23,20 @@ input {
     border-bottom: 1px solid $darkGrey;
 } 
 
+input[type='radio'] {
+    margin-right: 8px;
+}
+
+.radio-holder {
+    display: flex;
+    align-items: center;
+}
 
 .input-box {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
+   
 }
 
 .input-number {
