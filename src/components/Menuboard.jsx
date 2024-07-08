@@ -1,6 +1,5 @@
 // Dependencies
-import React, {useState} from 'react';
-import { useMediaQuery } from 'react-responsive';
+import React from 'react';
 
 // Components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
