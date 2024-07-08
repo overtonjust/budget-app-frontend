@@ -16,6 +16,7 @@ const App = () => {
 
   const handleFilterChange = (category) => {
     setCurrentFilter(category)
+    
 }
 
   return (

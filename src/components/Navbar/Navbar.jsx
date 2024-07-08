@@ -26,7 +26,7 @@ const Navbar = ({currentFilter, handleFilterChange}) => {
                       <Hamburger className='navbar__menu-button' toggled={isOpen} toggle={setOpen} size={24}/>
                       <div className={`navbar__menu-options ${isOpen ? 'show' : ''}`}>
                           {/* <Link to='/update'><FontAwesomeIcon className='navbar__icon' icon={faMoneyBillTransfer} /></Link>  */}
-                          <Menuboard handleFilterChange={handleFilterChange}/>
+                          <Menuboard setOpen={setOpen} handleFilterChange={handleFilterChange}/>
                       </div>
                   </div>
               </nav>
