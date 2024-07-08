@@ -14,9 +14,9 @@ Simply Budgeting is a full stack web application designed to demonstrate a budge
 
 #### Live Demo:
 
-1. Alternatively to view the site you can go [here](simplybudgeting.netlify.app).
+1. Alternatively to view the site you can go [here](https://simplybudgeting.netlify.app/transactions).
 
-2. The frontend deployment is run on netlify using the link ```simplybudgeting.netlify.app```
+2. The frontend deployment is run on netlify using the link ```https://simplybudgeting.netlify.app```
 
 3. The backend deployment is run on render using the link ```https://budget-app-backend-v1.onrender.com```
 
