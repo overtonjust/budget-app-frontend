@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,10 +8,12 @@ import { faTableCellsLarge, faUtensils, faBagShopping, faPuzzlePiece, faFileInvo
 
 
 const Menuboard = ({handleFilterChange, setOpen }) => {
-    
+    const navigate = useNavigate()
+
     const handleClick = (arg) => {
         handleFilterChange(arg)
         setOpen(false)
+        navigate('/transactions')
     }
 
     return (

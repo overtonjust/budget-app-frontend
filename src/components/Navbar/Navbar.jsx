@@ -1,12 +1,12 @@
 // Dependencies
 import React, {useState} from 'react';
-import './Navbar.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
-import Hamburger from 'hamburger-react';
 import { useMediaQuery } from 'react-responsive';
+import './Navbar.scss'
 
 // Components
+import Hamburger from 'hamburger-react';
 import { faMoneyBillTransfer} from '@fortawesome/free-solid-svg-icons';
 import Menuboard from '../Menuboard';
 
