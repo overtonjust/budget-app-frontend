@@ -10,6 +10,7 @@
 
 
 .menuboard {
+    position: relative;
     width: 200px;
     height: 80vh;
     max-height: 700px;
@@ -20,6 +21,7 @@
     gap: 1.2em;
     border-radius: .1rem;
     box-shadow: 2px 0 5px rgba(0,0,0,.4);
+    z-index: 999;
 
     &__icon{
         font-size: 1rem;
